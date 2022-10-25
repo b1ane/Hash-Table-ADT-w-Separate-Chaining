@@ -25,6 +25,7 @@ int main() {
         table.Insert(num);
     }
     
+    table.Display();
     
     
     return 0;

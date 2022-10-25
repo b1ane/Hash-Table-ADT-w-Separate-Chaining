@@ -61,6 +61,22 @@ public:
         }
     }
     
+    void Display() {
+        //loop through table
+        for( int i = 0; i < 10; i++ ) {
+            node* cu = table[i];
+            while (cu != nullptr) {
+                cout << "INDEX: " << cu->key << endl;
+                cout << "VALUE: " << cu->value << endl;
+                cu = cu->next;
+            }
+            cout << endl;
+        }
+        cout << endl;
+    }
+    
+    
+    
     
     
     
