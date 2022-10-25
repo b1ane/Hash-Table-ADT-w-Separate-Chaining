@@ -6,9 +6,26 @@
 //
 
 #include <iostream>
+#include <string>
+using namespace std;
+#include "hash.h"
+#include <sstream>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+int main() {
+    //given string representing an array of int
+    string input;
+    getline(cin, input);
+    
+    stringstream ss(input);
+    
+    Hash table;
+    
+    while (ss>>input) {
+        int num = stoi(input);
+        table.Insert(num);
+    }
+    
+    
+    
     return 0;
 }

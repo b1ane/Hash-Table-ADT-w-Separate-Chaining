@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		A62D03C829026C9300592DA0 /* Hash Table ADT using Separate Chaining */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Hash Table ADT using Separate Chaining"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A62D03CB29026C9300592DA0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A68C34BC290487F600C24986 /* hash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hash.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				A62D03CB29026C9300592DA0 /* main.cpp */,
+				A68C34BC290487F600C24986 /* hash.h */,
 			);
 			path = "Hash Table ADT using Separate Chaining";
 			sourceTree = "<group>";
