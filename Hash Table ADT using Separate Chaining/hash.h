@@ -78,7 +78,7 @@ public:
     
     int Diff() { //add values in each NON-empty array index, output difference between min and max
         
-        int x = 0;
+        int sums = 0;    //holds total sum of all nodes in each index
         int counter = 0;
         int retVal = 0;
         
@@ -92,35 +92,39 @@ public:
         //vector created, stores sum of values in each index
         vector<int> vec;
         
+        //loop through table
         for(int i = 0; i < 10; i++) {
             
             node* cu = table[i];
             while(cu != nullptr) {
-                x = x + cu->value;
+                sums = sums + cu->value;
                 cu = cu ->next;
+                //stop when empty index is found
                 if(table[i] == nullptr) {
                     break;
                 }
             }
-            if(x!=0) {
-                vec.push_back(x);
+            
+            if(sums!=0) {
+                vec.push_back(sums);
             }
-            x = 0;
+            sums = 0;
         }
          
-        int max = 0;
-        int min = 0;
+        int max = vec[0];
+        int min = vec[0];
         
+        //loops through vector, sets min and max values
         for( int i = 0; i < counter; i++) {
-            int y = vec.at(0);
-            if (y < vec.at(i)) {
-                max = vec.at(i);
+            if (vec[i]<min) {
+                min = vec[i];
             }
-            else {
-                min = y;
+            
+            if(vec[i]>max) {
+                max = vec[i];
             }
+            
         }
-
         retVal = max - min;
         
         return retVal;
@@ -132,6 +136,5 @@ public:
     
     
 };
-
 
 #endif /* hash_h */
