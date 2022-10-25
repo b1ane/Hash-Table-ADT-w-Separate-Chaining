@@ -25,7 +25,9 @@ int main() {
         table.Insert(num);
     }
     
-    table.Display();
+    //table.Display();
+    
+    cout << table.Diff() << endl;
     
     
     return 0;

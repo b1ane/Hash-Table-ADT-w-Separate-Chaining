@@ -12,6 +12,7 @@
 #define hash_h
 
 #include <iostream>
+#include <vector>
 using namespace std;
 
 struct node {
@@ -70,13 +71,60 @@ public:
                 cout << "VALUE: " << cu->value << endl;
                 cu = cu->next;
             }
-            cout << endl;
         }
         cout << endl;
     }
     
     
-    
+    int Diff() { //add values in each NON-empty array index, output difference between min and max
+        
+        int x = 0;
+        int counter = 0;
+        int retVal = 0;
+        
+        //loop through table,counts number of non-empty indicies
+        for(int i = 0; i < 10; i++) {
+            if(table[i] != nullptr) {
+                counter = counter + 1;
+            }
+        }
+        
+        //vector created, stores sum of values in each index
+        vector<int> vec;
+        
+        for(int i = 0; i < 10; i++) {
+            
+            node* cu = table[i];
+            while(cu != nullptr) {
+                x = x + cu->value;
+                cu = cu ->next;
+                if(table[i] == nullptr) {
+                    break;
+                }
+            }
+            if(x!=0) {
+                vec.push_back(x);
+            }
+            x = 0;
+        }
+         
+        int max = 0;
+        int min = 0;
+        
+        for( int i = 0; i < counter; i++) {
+            int y = vec.at(0);
+            if (y < vec.at(i)) {
+                max = vec.at(i);
+            }
+            else {
+                min = y;
+            }
+        }
+
+        retVal = max - min;
+        
+        return retVal;
+    }
     
     
     
